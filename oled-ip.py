@@ -20,7 +20,7 @@ disp = Adafruit_SSD1306.SSD1306_96_16(rst=RST)
 
 # Initialize library.
 disp.begin()
-disp.clear_display()
+disp.clear()
 
 # This function allows us to grab any of our IP addresses
 def get_ip_address(ifname):
@@ -41,7 +41,7 @@ except IOError:
         TEXT = ('NO INTERNET!')
 
 # The actual printing of TEXT
-disp.clear_display()
+disp.clear()
 intro = 'Hello!'
 ip = 'Your IP Address is:'
 disp.draw_text2(0,25,TEXT,1)
