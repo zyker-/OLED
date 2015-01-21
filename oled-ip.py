@@ -10,6 +10,11 @@ from time import sleep
 import Adafruit_SSD1306
 
 
+# Sets our variables to be used later
+RST = 24
+TEXT = ''
+
+
 # 96x16 display with hardware I2C:
 disp = Adafruit_SSD1306.SSD1306_96_16(rst=RST)
 
@@ -25,10 +30,6 @@ def get_ip_address(ifname):
         0x8915,  # SIOCGIFADDR
         struct.pack('256s', ifname[:15])
     )[20:24])
-
-# Sets our variables to be used later
-RST = 24
-TEXT = ''
 
 # This sets TEXT equal to whatever your IP address is, or isn't
 try:
